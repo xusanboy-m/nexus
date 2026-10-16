@@ -15,7 +15,7 @@
           <a href="#work">Work</a>
           <a href="#contact">Contact</a>
         </nav>
-        <button class="cta">Start Project</button>
+        <button class="cta" type="button" data-scroll="#contact">Start Project</button>
       </header>
 
       <main>
@@ -29,8 +29,8 @@
               brands.
             </p>
             <div class="hero-actions">
-              <button class="cta primary">Book a Call</button>
-              <button class="cta secondary">View Work</button>
+              <button class="cta primary" type="button" data-scroll="#contact">Book a Call</button>
+              <button class="cta secondary" type="button" data-scroll="#work">View Work</button>
             </div>
             <ul class="stats">
               <li><strong>120+</strong><span>Projects launched</span></li>
@@ -148,10 +148,21 @@
             <p class="eyebrow">Let’s build your next chapter</p>
             <h2>Need a sharper digital presence?</h2>
           </div>
-          <button class="cta primary">Book a Discovery Call</button>
+          <button class="cta primary" type="button" data-scroll="#contact">Book a Discovery Call</button>
         </section>
       </main>
     </div>
+
+    <script>
+      document.querySelectorAll('[data-scroll]').forEach((button) => {
+        button.addEventListener('click', () => {
+          const target = document.querySelector(button.dataset.scroll);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    </script>
 
     <style>
       :root {
