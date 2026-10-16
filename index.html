@@ -202,6 +202,26 @@
             transparent 32%
           ),
           linear-gradient(135deg, var(--bg), var(--bg-2));
+        scrollbar-color: var(--primary) rgba(255, 255, 255, 0.06);
+      }
+
+      * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--primary) rgba(255, 255, 255, 0.06);
+      }
+
+      *::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      *::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      *::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, var(--primary), var(--secondary));
+        border-radius: 999px;
+        border: 2px solid rgba(7, 17, 31, 0.9);
       }
 
       .page-shell {
