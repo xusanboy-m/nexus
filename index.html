@@ -15,7 +15,9 @@
           <a href="#work">Work</a>
           <a href="#contact">Contact</a>
         </nav>
-        <button class="cta" type="button" data-scroll="#contact">Start Project</button>
+        <button class="cta" type="button" data-scroll="#contact">
+          Start Project
+        </button>
       </header>
 
       <main>
@@ -29,8 +31,12 @@
               brands.
             </p>
             <div class="hero-actions">
-              <button class="cta primary" type="button" data-scroll="#contact">Book a Call</button>
-              <button class="cta secondary" type="button" data-scroll="#work">View Work</button>
+              <button class="cta primary" type="button" data-scroll="#contact">
+                Book a Call
+              </button>
+              <button class="cta secondary" type="button" data-scroll="#work">
+                View Work
+              </button>
             </div>
             <ul class="stats">
               <li><strong>120+</strong><span>Projects launched</span></li>
@@ -42,6 +48,32 @@
           <div class="hero-visual" aria-label="Futuristic product mockup">
             <div class="orb orb-one"></div>
             <div class="orb orb-two"></div>
+            <div class="window window-left">
+              <div class="window-header">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="mini-grid">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div class="window window-right">
+              <div class="window-header">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="signal-bars">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
             <div class="dashboard-card">
               <div class="card-header">
                 <span class="dot red"></span>
@@ -148,17 +180,19 @@
             <p class="eyebrow">Let’s build your next chapter</p>
             <h2>Need a sharper digital presence?</h2>
           </div>
-          <button class="cta primary" type="button" data-scroll="#contact">Book a Discovery Call</button>
+          <button class="cta primary" type="button" data-scroll="#contact">
+            Book a Discovery Call
+          </button>
         </section>
       </main>
     </div>
 
     <script>
-      document.querySelectorAll('[data-scroll]').forEach((button) => {
-        button.addEventListener('click', () => {
+      document.querySelectorAll("[data-scroll]").forEach((button) => {
+        button.addEventListener("click", () => {
           const target = document.querySelector(button.dataset.scroll);
           if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
           }
         });
       });
@@ -357,6 +391,96 @@
         display: grid;
         place-items: center;
         min-height: 520px;
+      }
+
+      .window {
+        position: absolute;
+        width: 190px;
+        min-height: 126px;
+        padding: 14px 14px 12px;
+        background: rgba(148, 166, 200, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 18px;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow: 0 16px 32px rgba(5, 12, 22, 0.22);
+        z-index: 1;
+      }
+
+      .window-left {
+        left: 0;
+        top: 90px;
+        transform: rotate(-12deg);
+      }
+
+      .window-right {
+        right: 12px;
+        bottom: 62px;
+        transform: rotate(12deg);
+      }
+
+      .window-header {
+        display: flex;
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+
+      .window-header span {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+      }
+
+      .mini-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .mini-grid span {
+        display: block;
+        height: 28px;
+        border-radius: 10px;
+        background: linear-gradient(
+          135deg,
+          rgba(105, 211, 255, 0.35),
+          rgba(141, 125, 255, 0.2)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .signal-bars {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 8px;
+        height: 62px;
+        margin-top: 10px;
+      }
+
+      .signal-bars span {
+        display: block;
+        width: 100%;
+        border-radius: 999px 999px 0 0;
+        background: linear-gradient(
+          180deg,
+          rgba(110, 240, 192, 0.9),
+          rgba(105, 211, 255, 0.4)
+        );
+      }
+
+      .signal-bars span:nth-child(1) {
+        height: 34%;
+      }
+      .signal-bars span:nth-child(2) {
+        height: 52%;
+      }
+      .signal-bars span:nth-child(3) {
+        height: 72%;
+      }
+      .signal-bars span:nth-child(4) {
+        height: 100%;
       }
 
       .dashboard-card {
